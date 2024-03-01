@@ -24,7 +24,7 @@ int main() {
             if ((center - point3(4, 0.2, 0)).length() > 0.9) {
                 shared_ptr<material> sphere_material;
 
-                if (choose_mat < 0.8) {
+                if (choose_mat < 0.5) {
                     // diffuse
                     auto albedo = color::random() * color::random();
                     sphere_material = make_shared<lambertian>(albedo);
@@ -61,8 +61,8 @@ int main() {
     camera cam;
 
     cam.aspect_ratio = 16.0 / 9.0;
-    cam.image_width = 400;
-    cam.samples_per_pixel = 10;
+    cam.image_width = 1000;
+    cam.samples_per_pixel = 50;
     cam.max_depth = 50;
 
     cam.vfov = 20;
